@@ -40,28 +40,35 @@ public class Medico {
     public Long getId() {
         return id;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public String getEmail() {
         return email;
     }
-
     public String getDocumento() {
         return documento;
     }
-
     public String getTelefono() {
         return telefono;
     }
-
     public Especialidad getEspecialidad() {
         return especialidad;
     }
-
     public Direccion getDireccion() {
         return direccion;
     }
+
+    public void actualizarDatos(DatosActualizarMedico datosActualizarMedico) {
+        if(datosActualizarMedico.nombre() != null){
+            this.nombre = datosActualizarMedico.nombre();}
+        if (datosActualizarMedico.documento() != null){
+            this.documento = datosActualizarMedico.documento();
+        }
+        if (datosActualizarMedico.direccion() != null){
+            this.direccion = direccion.actualizarDatos(datosActualizarMedico.direccion());
+        }
+    }
+
+
 }
