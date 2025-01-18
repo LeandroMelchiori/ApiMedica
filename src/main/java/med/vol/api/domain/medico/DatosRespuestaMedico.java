@@ -1,6 +1,6 @@
-package med.vol.api.medico;
+package med.vol.api.domain.medico;
 
-import med.vol.api.direccion.DatosDireccion;
+import med.vol.api.domain.direccion.DatosDireccion;
 
 public record DatosRespuestaMedico(
         Long id,
