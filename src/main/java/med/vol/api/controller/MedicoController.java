@@ -19,21 +19,45 @@ public class MedicoController {
     private MedicoRepository medicoRepository;
 
     @PostMapping
-    public void registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico){
+    public void registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico) {
         System.out.println("El request llega correctamente");
         System.out.println(datosRegistroMedico);
         medicoRepository.save(new Medico(datosRegistroMedico));
     }
 
     @GetMapping
-    public Page<DatosListadoMedico> listadoMedicos(@PageableDefault(size = 2) Pageable pageable){
-        return medicoRepository.findAll(pageable).map(DatosListadoMedico::new);
+    public Page<DatosListadoMedico> listadoMedicos(@PageableDefault(size = 4) Pageable paginacion) {
+        return medicoRepository.findByActivoTrue(paginacion).map(DatosListadoMedico::new);
     }
 
     @PutMapping
     @Transactional
-    public void actualizarMedico(@RequestBody @Valid DatosActualizarMedico datosActualizarMedico){
+    public void actualizarMedico(@RequestBody @Valid DatosActualizarMedico datosActualizarMedico) {
         Medico medico = medicoRepository.getReferenceById(datosActualizarMedico.id());
         medico.actualizarDatos(datosActualizarMedico);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void eliminarMedico(@PathVariable Long id) {
+        Medico medico = medicoRepository.getReferenceById(id);
+        medico.desactivarMedico();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+      // borrado fisico
+//    @DeleteMapping("/{id}")
+//    @Transactional
+//    public void eliminarMedico(@PathVariable Long id){
+//        Medico medico = medicoRepository.getReferenceById(id);
+//        medicoRepository.delete(medico);
+//    }
