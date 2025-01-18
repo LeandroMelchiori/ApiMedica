@@ -10,7 +10,5 @@ create table medicos(
     numero varchar(20),
     complemento varchar(100),
 
-
-
     primary key(id)
 );
