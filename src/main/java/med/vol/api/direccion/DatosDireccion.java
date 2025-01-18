@@ -1,4 +1,4 @@
-package med.vol.api.dto;
+package med.vol.api.direccion;
 
 import jakarta.validation.constraints.NotBlank;
 

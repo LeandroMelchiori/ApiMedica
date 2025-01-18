@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.vol.api.dto.Direccion;
+import med.vol.api.direccion.Direccion;
 
 @Getter
 @EqualsAndHashCode(of = "id")

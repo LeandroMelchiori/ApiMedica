@@ -1,9 +1,8 @@
-package med.vol.api.dto;
+package med.vol.api.direccion;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Embeddable
 @Getter
@@ -33,5 +32,25 @@ public class Direccion {
         this.complemento = direccion.complemento();
         this.ciudad = direccion.ciudad();
         return this;
+    }
+
+    public String getCalle() {
+        return calle;
+    }
+
+    public String getDistrito() {
+        return distrito;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
     }
 }
