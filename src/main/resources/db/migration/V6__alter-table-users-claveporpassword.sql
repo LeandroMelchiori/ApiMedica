@@ -1,0 +1,1 @@
+ALTER TABLE users CHANGE COLUMN clave password VARCHAR(300) NOT NULL;
