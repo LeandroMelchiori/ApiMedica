@@ -1,6 +1,7 @@
 package med.vol.api.controller;
 
 import jakarta.validation.Valid;
+import med.vol.api.infra.security.TokenService;
 import med.vol.api.users.UserAuthenticateData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +20,15 @@ public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping
     public ResponseEntity authenticateUser(@RequestBody @Valid UserAuthenticateData userAuthenticateData) {
-        Authentication token = new UsernamePasswordAuthenticationToken(userAuthenticateData.login(),
+        Authentication authToken = new UsernamePasswordAuthenticationToken(userAuthenticateData.login(),
                 userAuthenticateData.password());
-        authenticationManager.authenticate(token);
-        return ResponseEntity.ok().build();
+        authenticationManager.authenticate(authToken);
+        var JWTtoken = tokenService.generateToken();
+        return ResponseEntity.ok(JWTtoken);
     }
 }
