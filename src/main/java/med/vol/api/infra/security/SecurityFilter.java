@@ -24,13 +24,12 @@ public class SecurityFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("Inicio doFilter");
+
         //Obtener el authHeader del header
         var authHeader = request.getHeader("Authorization");
-        System.out.println(authHeader);//.replace("Bearer ", "");
         if (authHeader != null) {
             var token = authHeader.replace("Bearer ", "");
-            System.out.println(tokenService.getSubject(token)); // este usuario tiene sesion?
+//            System.out.println(tokenService.getSubject(token)); // este usuario tiene sesion?
             var subject = tokenService.getSubject(token); // extract username
             if (subject != null) {
                 //Token valido
@@ -40,6 +39,5 @@ public class SecurityFilter extends OncePerRequestFilter {
             }
         }
         filterChain.doFilter(request, response);
-        System.out.println("Fin doFilter");
     }
 }

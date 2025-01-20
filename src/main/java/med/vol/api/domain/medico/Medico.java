@@ -1,9 +1,7 @@
 package med.vol.api.domain.medico;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import med.vol.api.domain.direccion.Direccion;
 
 @Entity(name = "Medico")
