@@ -7,10 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.vol.api.domain.direccion.Direccion;
 
-@Getter
 @EqualsAndHashCode(of = "id")
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity(name = "Paciente")
 @Table(name = "pacientes")
 public class Paciente {@Id

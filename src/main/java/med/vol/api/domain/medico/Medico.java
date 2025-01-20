@@ -8,8 +8,6 @@ import med.vol.api.domain.direccion.Direccion;
 
 @Entity(name = "Medico")
 @Table(name = "medicos")
-@Getter
-@AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Medico {
     @Id

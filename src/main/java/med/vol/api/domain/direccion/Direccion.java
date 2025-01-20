@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Embeddable
-@Getter
-@AllArgsConstructor
 public class Direccion {
     private String calle;
     private String distrito;

@@ -1,21 +1,15 @@
 package med.vol.api.domain.requests;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import med.vol.api.domain.medico.Medico;
 import med.vol.api.domain.paciente.Paciente;
+import med.vol.api.domain.requests.MotivoCancelamiento;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Table(name = "consultas")
 @Entity(name = "Consulta")
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Consulta {
 
@@ -36,6 +30,8 @@ public class Consulta {
     @Column(name = "motivo_cancelamiento")
     @Enumerated(EnumType.STRING)
     private MotivoCancelamiento motivoCancelamiento;
+
+    public Consulta() {}
 
     public void cancelar(MotivoCancelamiento motivo) {
         this.motivoCancelamiento = motivo;
