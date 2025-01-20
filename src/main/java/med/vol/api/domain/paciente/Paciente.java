@@ -26,6 +26,8 @@ private Long id;
 
     private Boolean activo;
 
+    public Paciente() {}
+
     public Paciente(DatosRegistroPaciente datos) {
         this.activo = true;
         this.nombre = datos.nombre();
