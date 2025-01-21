@@ -38,6 +38,7 @@ class ConsultaControllerTest {
     @Autowired
     private JacksonTester<DatosDetalleConsulta> datosDetalleConsultaJson;
 
+    // mockamos para evitar que pase por los metodos del repositorio
     @MockitoBean
     private ReservaDeConsultas reservaDeConsultas;
 
@@ -70,9 +71,10 @@ class ConsultaControllerTest {
                 )
                 .andReturn().getResponse();
 
-        var jsonEsperado = datosDetalleConsultaJson.write(
-                datosDetalle
-        ).getJson();
+        var jsonEsperado =
+                datosDetalleConsultaJson
+                        .write(datosDetalle)
+                        .getJson();
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
         assertThat(response.getContentAsString()).isEqualTo(jsonEsperado);
     }
