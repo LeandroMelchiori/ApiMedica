@@ -15,6 +15,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
@@ -38,7 +39,7 @@ class ConsultaControllerTest {
     @Autowired
     private JacksonTester<DatosDetalleConsulta> datosDetalleConsultaJson;
 
-    @MockBean
+    @MockitoBean
     private ReservaDeConsultas reservaDeConsultas;
 
     @Test

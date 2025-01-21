@@ -5,6 +5,7 @@ import med.vol.api.domain.requests.Consulta;
 import med.vol.api.domain.direccion.DatosDireccion;
 import med.vol.api.domain.paciente.DatosRegistroPaciente;
 import med.vol.api.domain.paciente.Paciente;
+import med.vol.api.domain.medico.MedicoRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,7 @@ class MedicoRepositoryTest {
     void elegirMedicoAleatorioDisponibleEnLaFechaEscenario2() {
         //given o arrange
         var lunesSiguienteALas10 = LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.MONDAY)).atTime(10,0);
-        var medico = registrarMedico("Medico1", "medico@gmail.com", "12345", Especialidad.CARDIOLOGIA);
+        var medico = registrarMedico("Medico1", "medico@gmail.com", "123457", Especialidad.CARDIOLOGIA);
         //when o act
         var medicoLibre = medicoRepository.elegirFechaDisponibleMedicoAleatorio(Especialidad.CARDIOLOGIA, lunesSiguienteALas10);
         //then o assert

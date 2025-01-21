@@ -1,8 +1,6 @@
 package med.vol.api.domain.direccion;
 
 import jakarta.persistence.Embeddable;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 @Embeddable
 public class Direccion {
