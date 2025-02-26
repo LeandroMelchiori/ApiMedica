@@ -44,9 +44,26 @@ spring.datasource.username=tu_usuario
 spring.datasource.password=tu_contraseña
 spring.jpa.hibernate.ddl-auto=update
 ```
-##🔹 3. Ejecutar la aplicación
+
+## 🔹 3. Ejecutar la aplicación
 Compila y ejecuta el proyecto con Maven:
 ```bash
 mvn spring-boot:run
 ```
+
+## 🔍 Documentación de la API
+La documentación de los endpoints está disponible en Swagger UI:
+📌 http://localhost:8080/swagger-ui.html
+
+## 🛠️ Endpoints principales
+| Método | Endpoint       | Descripción                         |
+|--------|--------------|---------------------------------|
+| **POST**  | `/auth/login`   | Autenticación con JWT         |
+| **POST**  | `/auth/register` | Registro de usuarios         |
+| **GET**   | `/pacientes`    | Listar todos los pacientes    |
+| **POST**  | `/pacientes`    | Crear un paciente            |
+| **GET**   | `/medicos`      | Listar todos los médicos      |
+| **POST**  | `/medicos`      | Crear un médico              |
+| **GET**   | `/citas`        | Obtener todas las citas médicas |
+| **POST**  | `/citas`        | Agendar una cita médica      |
 
