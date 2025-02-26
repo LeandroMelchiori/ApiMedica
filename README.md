@@ -27,12 +27,12 @@ ApiMedica es una API REST desarrollada en **Java con Spring Boot**, diseñada pa
 ---
 
 ## 🏗️ Instalación y Configuración  
-### 🔹 1. Clonar el repositorio  
+### 1️⃣ Clonar el repositorio  
 ```bash
 git clone https://github.com/LeandroMelchiori/ApiMedica.git
 cd ApiMedica
 ```
-## 🔹 2. Configurar la base de datos
+## 2️⃣ Configurar la base de datos
 Asegúrate de tener PostgreSQL instalado y crea una base de datos con el siguiente comando:
 ```sql
 CREATE DATABASE apimedica;
@@ -45,7 +45,7 @@ spring.datasource.password=tu_contraseña
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-## 🔹 3. Ejecutar la aplicación
+## 3️⃣ Ejecutar la aplicación
 Compila y ejecuta el proyecto con Maven:
 ```bash
 mvn spring-boot:run
